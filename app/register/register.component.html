@@ -1,0 +1,26 @@
+<p>
+  register works!
+</p>
+<div class="col-md-8 col-md-offset-2">
+<form [formGroup]="registerform" (ngSubmit)="postdata(this.registerform.value)">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email"  formControlName="email" >
+    <div *ngIf="registerform.controls['email'].touched && !registerform.controls['email'].valid">  
+      <span *ngIf="registerform.controls['email'].hasError('required') ">email is required  </span>   
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="name" class="form-control" id="pwd" formControlName="name">
+  </div>
+  <div class="checkbox">
+    <label for="mobile">Mobile</label>
+    <input type="text" class="form-control" id="mobile" formControlName="mobile" >
+  </div>
+  <br>
+  <button type="submit" class="btn btn-success" [disabled]="registerform.invalid">Submit</button>
+</form>
+</div>
+<!-- 
+<pre>{{registerform.value | json}}</pre>  -->

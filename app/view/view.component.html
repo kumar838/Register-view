@@ -1,0 +1,23 @@
+<p>
+  view works!
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Mobile</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let res of viewres">
+  
+    <tr>
+      <td>{{res.email}}</td>
+      <td>{{res.name}}</td>
+      <td>{{res.mobile}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
